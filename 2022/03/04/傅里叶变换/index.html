@@ -13,23 +13,55 @@
 u\in \mathscr S\iff \sup_{x\in\mathbb R^n}|x^\alpha\partial_x^\beta u(x)|<\infty, \forall \alpha, \beta\in \mathbb N^n.</script><p>其中 $\alpha, \beta$ 是指标. 有一个简单的 Schwartz 函数却不是 $C^\infty_0$ 的例子是</p>
 <script type="math/tex; mode=display">
 v_A(x) = e^{-\pi \langle Ax, x\rangle},</script><p>其中 $A$ 是对称正定矩阵. </p>
-<blockquote>
-<p>$v_A\in\mathscr S$ 是容易验证的, 考虑 $\varphi=\langle Ax, x \rangle$, </p>
-<script type="math/tex; mode=display">
-\partial_i\varphi = 2(S^2x)_i = 2(Ax)_i = 2\sum_{j=1}^n a_{ij}x_j.</script><p>因此可以得到</p>
-<script type="math/tex; mode=display">
-\partial_i v_A(x) = (\partial_i\varphi)v_A(x) = \left(-2\sum_{j=1}^na_{ij}x_j \right)v_A(x)=:f_i(x) v_A(x)</script><p>不妨假设 $\partial_x^\alpha v_A = f_{\alpha}(x)v_A$, 其中 $f_\alpha$ 是一个最高次项次数为 $|\alpha|$ 的多项式. 对于 $\alpha’=\alpha+e_i$, 我们有</p>
-<script type="math/tex; mode=display">
+<details> 
+<summary>
+$v_A\in\mathscr S$ 是容易验证的: 
+</summary>
+考虑 $\varphi=\langle Ax, x \rangle$, 显然有 $\partial_i\varphi = 2\sum_{j=1}^n a_{ij}x_j.$ 因此可以得到
+$$
+\partial_i v_A(x) = (\partial_i\varphi)v_A(x) = \left(-2\sum_{j=1}^na_{ij}x_j \right)v_A(x)=:f_i(x) v_A(x)
+$$
+不妨假设 $\partial_x^\alpha v_A = f_{\alpha}(x)v_A$, 其中 $f_\alpha$ 是一个最高次项次数为 $|\alpha|$ 的多项式. 对于 $\alpha'=\alpha+e_i$, 我们有
+$$
 \begin{aligned}
 &\partial_x^{\alpha'}v_A 
 = \partial_i\partial_x^{\alpha}v_A 
 =\partial_i\left(f_\alpha v_A\right)\\
 =&(\partial_if_\alpha)v_A + f_\alpha\partial_iv_A = (\partial_i f_\alpha + f_if_\alpha)v_A=:f_{\alpha'}v_A
-\end{aligned}</script><p>因此</p>
+\end{aligned}
+$$
+因此
+$$
+x^\alpha\partial_x^\beta v_A = f_{\alpha, \beta}(x)v_A, 
+$$
+其中 $f_{\alpha, \beta}$ 是一个多项式, 而 $f v_A$ 在无穷远处为 0, 又因为光滑函数在紧集上一致有界, 因此
+$$
+|x^\alpha\partial_x^\beta v_A|\leq C.
+$$
+</details>
+
+<p>对于 Schwartz 函数 $u\in\mathscr S$, 显然有 $u\in L^1$. 这是因为</p>
 <script type="math/tex; mode=display">
-x^\alpha\partial_x^\beta v_A = f_{\alpha, \beta}(x)v_A,</script><p>其中 $f_{\alpha, \beta}$ 是一个多项式, 而 $f v_A$ 在无穷远处为 0, 又因为光滑函数在紧集上一致有界, 因此</p>
+\int|u(x)| dx \leq \int \langle x\rangle^{-k}dx \cdot\|\langle x\rangle^ku(x)\|_{L^{\infty}}.</script><p>因此 $u(x)e^{-2\pi ix\cdot \xi}$ 是绝对可积的. 因此我们可以定义 $u(x)\in\mathscr S$ 的傅里叶变换 $\hat u(\xi)$:</p>
 <script type="math/tex; mode=display">
-|x^\alpha\partial_x^\beta v_A|\leq C</script></blockquote>
+\mathscr F[u]:=\hat u(\xi)=\int_{\mathbb R^n_x}e^{-2\pi ix\cdot\xi}u(x)dx.\label{FTdef1}\tag{1.1}</script><p>可以从傅里叶变换的定义式 $\eqref{FTdef1}$ 上应用分部积分公式, 以及控制收敛定理可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathscr F[\partial_x^{\alpha}u] (\xi)
+= \int e^{-2\pi ix\cdot \xi}\partial_x^\alpha udx 
+= (-1)^{|\alpha|}\int u\partial_x^\alpha e^{-2\pi ix\cdot\xi}dx
+= (2\pi i)^{|\alpha|}\mathscr F[u](\xi).\\
+\partial_\xi^\alpha\mathscr F[u] (\xi)
+= \int u \partial_\xi^\alpha e^{-2\pi ix\cdot \xi}dx 
+= \int (-2\pi ix)^{\alpha}ue^{-2\pi ix\cdot\xi}dx
+= (-2\pi i)^{|\alpha|}\mathscr F[x^\alpha u](\xi)
+\end{aligned}\label{eq2}\tag{1.2}</script><p>容易从 $\eqref{FTdef1}$ 中看出, 傅里叶变换是一个线性变换, 因此可以如下定义微分算子 $D$</p>
+<script type="math/tex; mode=display">
+D_x^\alpha = (2\pi i)^{-|\alpha|}\partial_x^\alpha, D_\xi^\alpha = (2\pi i)^{-|\alpha|}\partial_\xi^\alpha.</script><p>从而得到微分算子 $D$ 和傅里叶变换之间的关系: </p>
+<script type="math/tex; mode=display">
+\mathscr F[D_x^\alpha u] = \xi^\alpha\mathscr F[u], \mathscr F[x^\alpha u] = (-1)^{|\alpha|}D_\xi^{\alpha}\mathscr F[u].</script><p>而对于下式</p>
+<script type="math/tex; mode=display">
+|\xi^\alpha D_\xi^\beta\mathscr F[u]|=|\mathscr F[D_x^\alpha(x^\beta u)]|\leq \int|D_x^\alpha(x^\beta u(x))|dx\leq C_{\alpha,\beta}\|\langle x\rangle^{n+1} u(x)\|_{L^\infty},</script><p>我们可以得出, $\hat u\in\mathscr S$, 并且若 $u_n\to 0$ in $\mathscr S$, 可以得到 $\hat {u_n}\to 0$ in $\mathscr S$, 即 $\mathscr F$ 是 $\mathscr S$ 上的一个连续线性变换. </p>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Letter Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://letterwu.github.io/2022/03/04/傅里叶变换/">https://letterwu.github.io/2022/03/04/傅里叶变换/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://letterwu.github.io">Have a nice day~ | Letter Wu's BLOG</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/math/">math</a><a class="post-meta__tags" href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">傅里叶变换</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/zfb_code.png"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wx_code.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="social-share pull-right" data-disabled=""></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="next-post pull-right"><a href="/2022/03/03/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"><span>数据可视化</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/top_img_amiya.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2022 By Letter Wu</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://letterwu.github.io">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
