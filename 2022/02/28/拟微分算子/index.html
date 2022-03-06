@@ -167,7 +167,86 @@ $$
 
 </details>
 
-<p>对于 $\partial_x^{\alpha}\langle x\rangle^{-k}$, 我们有如下估计式: </p>
+<p>关于 $\langle x\rangle=(1+|x|^2)^{1/2}$, 我们有如下不等式:</p>
+<script type="math/tex; mode=display">
+|\partial_x^\alpha \langle x\rangle^{-k}|\leq C_{\alpha, k}\langle x\rangle^{-k}.\label{bkteq1}\tag{1.1}</script><details>
+    <summary>证明请点击: </summary>
+对于 $\partial_x^{\alpha}\langle x\rangle^{-k}$, 我们有如下等式: 
+$$
+\partial_x^\alpha \langle x\rangle^{-k} = \sum_{\beta\leq\alpha}a_{\beta}^\alpha x^\beta \langle x\rangle^{-k-2|\beta|}.
+$$
+因为
+$$
+\partial_i\langle x\rangle^{-k} = (-k)x_i \langle x\rangle^{-k-2},
+$$
+然后利用归纳法, 
+$$
+\partial^{\alpha'}\langle x\rangle^{-k}
+=\partial_i(\partial^{\alpha}\langle x\rangle^{-k})
+=\sum_{\beta\leq \alpha'}a^{\alpha'}_\beta x^{\beta}\langle x\rangle^{-k-2|\beta|}
+$$
+因此, 
+$$
+|\partial_x^\alpha \langle x\rangle^{-k}|
+=\sum_{\beta\leq\alpha}|a_{\beta}^\alpha| \langle x\rangle^{|\beta|} \langle x\rangle^{-k-2|\beta|}
+\leq C\sum_{\beta\leq \alpha}\langle x\rangle^{-k-|\beta|}
+\leq C\langle x\rangle^{-k}
+$$
+</details>
+
+<p>而</p>
+<script type="math/tex; mode=display">
+\langle x-y\rangle^2=1+|x|^2+|y|^2-2(x, y)\leq 2(1 + |x|^2+|y|^2+|x|^2|y|^2)=2\langle x\rangle^2\langle y\rangle^2.</script><p>因此</p>
+<script type="math/tex; mode=display">
+\left(\frac{\langle x-y\rangle}{\langle x\rangle}\right)^{s}
+\leq \left(\frac{\langle x-y\rangle}{\langle x\rangle}\right)^{|s|}
+\leq 2^{|s|}\langle y\rangle^{|s|}.</script><p>即</p>
+<script type="math/tex; mode=display">
+\langle x-y\rangle^{-k}\leq C_k \langle x\rangle^{-k}\langle y\rangle^{k}.</script><p><strong>定理:</strong> 令 $a\in C_b^\infty$, 算子 $a(x, D)$ 是 $L^2$ 上的有界线性算子. </p>
+<details><summary>证明请点击: </summary>
+
+因为 $\mathscr S$ 在 $L^2$ 上稠密, 因此只需证明
+$$
+|\langle a(x, D)u, v\rangle|\leq C\|u\|_{L^2}\|v\|_{L^2}.
+$$
+取 $\forall k\in 2\mathbb N: k > n$. 因为
+$$
+\int\langle x-y\rangle^{-k}|u(y)e^{-2\pi iy\cdot \xi}|dy\leq \left(\int|u|^2dy\right)^{\frac12}\left(\int \langle x-y\rangle^{-k}dy\right)^{\frac12}=C\|u\|_{L^2},
+$$
+令
+$$
+\begin{aligned}
+&W_u(x,\xi) = \int \langle x-y\rangle^{-k}u(y)e^{-2\pi iy\cdot\xi}dy\\
+&W_{\bar {\hat v}}(x, \xi) = \int \langle \xi-\eta\rangle^{-k}\overline{\hat v(\xi)}e^{-2\pi i\eta\cdot x}d\eta.
+\end{aligned}
+$$
+
+可以看出 $\langle D_\xi\rangle^k(W_u e^{2\pi i x\cdot \xi})=\hat u(\xi)e^{2\pi ix\cdot\xi}$, $\langle D_x\rangle^{k}(W_{\bar{\hat v}}e^{2\pi ix\cdot \xi}) = \overline{v(x)}e^{2\pi ix\cdot \xi}$. 因此
+$$
+\begin{aligned}
+\langle a(x, D)u, v\rangle
+&=\iint a(x, \xi)\hat u(\xi)\overline v(x)e^{2\pi i x\cdot\xi}dxd\xi \\
+&=\iint a(x, \xi) \langle D_\xi\rangle^k (W_u e^{2\pi ix\cdot\xi})\bar v(x)dxd\xi\\
+&=\iint(\langle D_\xi\rangle^k a)W_ue^{2\pi ix\cdot \xi}\bar v(x)dxd\xi\\
+&=\iint(\langle D_\xi\rangle^k a)W_u \langle D_x\rangle^k(W_{\hat{\bar v}} e^{2\pi ix\cdot \xi})dxd\xi\\
+&=\sum_{k'+k''=k}\frac{k!}{k'!k''!}\iint(\langle D_x\rangle^{k'}\langle D_\xi\rangle^ka)(\langle D_x\rangle^{k''}W_u)W_{\bar{\hat v}}dxd\xi.
+\end{aligned}
+$$
+但是根据不等式 $\eqref{bkteq1}$, 可以得到
+$$
+\begin{aligned}
+|\partial_x^{\alpha}W_u| 
+&= \int |\partial_x^\alpha\langle x-y\rangle^{-k}u(y)e^{-2\pi iy\cdot\xi}|dy\\
+&\leq C_\alpha\int|\langle x-y\rangle^{-k}u(y)e^{-2\pi iy\cdot\xi}|dy\\
+&\leq C\|u\|_{L^2}
+\end{aligned}
+$$
+因此
+$$
+|\langle a(x, D)u, v\rangle|\leq C\left(\sum \|\langle D_x\rangle^{k'}\langle D_\xi\rangle^k a\|_{L^\infty} \right)\|u\|_{L^2}\|v\|_{L^2}.
+$$
+</details>
+
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Letter Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://letterwu.github.io/2022/02/28/拟微分算子/">https://letterwu.github.io/2022/02/28/拟微分算子/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://letterwu.github.io">Have a nice day~ | Letter Wu's BLOG</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/math/">math</a><a class="post-meta__tags" href="/tags/%E6%8B%9F%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90/">拟微分算子</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/zfb_code.png"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wx_code.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="social-share pull-right" data-disabled=""></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="prev-post pull-left"><a href="/2022/03/03/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"><i class="fa fa-chevron-left">  </i><span>数据可视化</span></a></div><div class="next-post pull-right"><a href="/2022/02/27/%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0/"><span>广义函数</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/top_img_amiya.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2022 By Letter Wu</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://letterwu.github.io">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],

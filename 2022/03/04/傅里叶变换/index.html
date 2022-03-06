@@ -12,10 +12,10 @@
 <script type="math/tex; mode=display">
 u\in \mathscr S\iff \sup_{x\in\mathbb R^n}|x^\alpha\partial_x^\beta u(x)|<\infty, \forall \alpha, \beta\in \mathbb N^n.</script><p>其中 $\alpha, \beta$ 是指标. 有一个简单的 Schwartz 函数却不是 $C^\infty_0$ 的例子是</p>
 <script type="math/tex; mode=display">
-v_A(x) = e^{-\pi \langle Ax, x\rangle},</script><p>其中 $A$ 是对称正定矩阵. </p>
+v_A(x) = e^{-\pi \langle Ax, x\rangle},</script><p>其中 $A$ 是对称正定矩阵. $v_A\in\mathscr S$ 是容易验证的. </p>
 <details> 
 <summary>
-$v_A\in\mathscr S$ 是容易验证的: 
+证明请点击: 
 </summary>
 考虑 $\varphi=\langle Ax, x \rangle$, 显然有 $\partial_i\varphi = 2\sum_{j=1}^n a_{ij}x_j.$ 因此可以得到
 $$
@@ -39,6 +39,7 @@ $$
 |x^\alpha\partial_x^\beta v_A|\leq C.
 $$
 </details>
+
 
 <p>对于 Schwartz 函数 $u\in\mathscr S$, 显然有 $u\in L^1$. 这是因为</p>
 <script type="math/tex; mode=display">
