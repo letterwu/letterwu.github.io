@@ -30,40 +30,26 @@ u\in C(\bar I; X) \iff\begin{aligned}
 <p>对于 $f\in L^p(I; X)$, 显然有 $F(t) = |f(t)|_X\in L^p(I)$. 因此对于 $G\in L^1(I)$, $|G|\in L^1$, 我们可以得到 $s\mapsto |F(s)G(t-s)|$ 是可积的, 且 $F*G\in L^1(I)$. 因此有</p>
 <script type="math/tex; mode=display">
 \int_I\|f(s)G(t-s)\|dt = \int_I \|f(s)\||G(t-s)|dt = F*|G|(t)\in L^p(I).</script><p>因此 $t\mapsto f(t) G(t-s)$ 可积, $f<em>G\in L^p(I; X)$. 因此可以定义 $L^p(I;X)$ 与 $L^1(I)$ 的<em>*卷积</em></em>. </p>
-<p><strong>定理:</strong> 若 $f\in L^p(I; X)$, $\varphi\in C_0^m(I)$, 则 $f*\varphi\in C^m(I;X)$. </p>
-<details open>
-<summary>证明请点此: </summary>
-
-只证明 $m=1$ 的情形, 其余类似. 
-$$
+<p><strong>定理:</strong> 若 $f\in L^p(I; X)$, $\varphi\in C_0^m(I)$, 则 $f*\varphi\in C^m(I;X)$, 且</p>
+<script type="math/tex; mode=display">
+\frac{d}{dt}(f*\varphi) = f*\frac{d\varphi}{dt}.</script><p><strong>定理:</strong> </p>
+<script type="math/tex; mode=display">
+\int_I f\varphi = 0, \forall \varphi\in C_0^\infty(I)\Rightarrow u = 0\ a.e.</script><p>对于 $\psi, \varphi\in C_0^\infty$, 我们有</p>
+<script type="math/tex; mode=display">
 \begin{aligned}
-\frac{d}{dt}f*\varphi(t) &= \lim \int f(s)\frac{1}{h}[\varphi(t+h-s) - \varphi(t-s)]ds
-\end{aligned}
-$$
-
-由于
-</details>
-
-
-<h2 id="L-p-空间的弱导数"><a href="#L-p-空间的弱导数" class="headerlink" title="$L^p$ 空间的弱导数"></a>$L^p$ 空间的弱导数</h2><p>给定 $L^p$ 函数 $f\in L^p(I; X)$, 对于任意 $\varphi\in C_0^\infty(I)$, 我们可以得到</p>
+\varphi*\psi \to \psi \ in\ C_0^\infty, \ supp(\varphi)\to \{0\}.
+\end{aligned}</script><p>因此, </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_I (f*\varphi)\psi = (f * \varphi) * \check \psi(0) = \int_I f(\check \varphi *\psi) \to \int_I f\psi, 
+\end{aligned}</script><p>就可以得到如下定理.<br><strong>定理:</strong> 当$supp\varphi\to \{0\}$时, </p>
+<script type="math/tex; mode=display">
+\int_I(f*\varphi)\psi\to \int_If\psi, \forall \psi\in C_0^\infty(I).</script><h2 id="L-p-空间的弱导数"><a href="#L-p-空间的弱导数" class="headerlink" title="$L^p$ 空间的弱导数"></a>$L^p$ 空间的弱导数</h2><p>给定 $L^p$ 函数 $f\in L^p(I; X)$, 对于任意 $\varphi\in C_0^\infty(I)$, 我们可以得到</p>
 <script type="math/tex; mode=display">
 \int_I \|f(t)\varphi(t)\|_Xdt\leq\int_I\|f(t)\|_X|\varphi(t)|dt\leq \|f\|_{L^p(I; X)}\|\varphi\|_{L^{p'}(I)}<\infty.</script><p>因此 $t\mapsto|f(t)\varphi(t)|_X$ 关于 $t$ 可积. 根据 Banach 值函数的可积的充要条件可知 $t\mapsto f\varphi$ 可积. 那么就可以合理的定义 $L^p$ 函数的弱导数了. </p>
 <p><strong>Def:</strong> 我们说 $v\in L^p(I; X)$ 是 $u\in L^p(I;X)$ 的弱导数当且仅当对于任意的 $\varphi\in C_0^\infty(I)$, 存在</p>
 <script type="math/tex; mode=display">
-\int_I v(t)\varphi(t)dt = -\int_I u(t)\varphi'(t)dt</script><p>我们通常将 $v$ 记为 $u’$. </p>
-<p><strong>定理:</strong> 对于给定的 $L^p$ 空间的函数 $u$, 其弱导数唯一. </p>
-<details open>
-<summary>证明请点此: </summary>
-
-我们只需证明对于若 $u\in L^p(I; X)$ 且满足
-$$
-\int u\varphi = 0, \forall \varphi\in C_0^\infty(I), 
-$$
-
-有 $u=0$ 即可. 我们用反证法, 假设存在某一点 $t\in I$, 使得 $\|u(t)\|_X>0$. 
-</details>
-
-
+\int_I v(t)\varphi(t)dt = -\int_I u(t)\varphi'(t)dt</script><p>我们通常将 $v$ 记为 $u’$. 对于给定的 $L^p$ 空间的函数 $u$, 显然其弱导数唯一.</p>
 <h2 id="索伯列夫空间-W-1-p-I-X"><a href="#索伯列夫空间-W-1-p-I-X" class="headerlink" title="索伯列夫空间 $W^{1, p}(I;X)$"></a>索伯列夫空间 $W^{1, p}(I;X)$</h2></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Letter Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://letterwu.github.io/2022/04/01/带时间t的索伯列夫空间/">https://letterwu.github.io/2022/04/01/带时间t的索伯列夫空间/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://letterwu.github.io">Have a nice day~ | Letter Wu's BLOG</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/math/">math</a><a class="post-meta__tags" href="/tags/Sobolev-Space/">Sobolev Space</a><a class="post-meta__tags" href="/tags/Space-involving-time/">Space involving time</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/zfb_code.png"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wx_code.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="social-share pull-right" data-disabled=""></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="prev-post pull-left"><a href="/2022/04/03/Banach-%E5%80%BC%E5%87%BD%E6%95%B0/"><i class="fa fa-chevron-left">  </i><span>Banach-值函数</span></a></div><div class="next-post pull-right"><a href="/2022/03/21/phragm%C3%A9n%E2%80%93lindel%C3%B6f%20principle/"><span>Phragmén–Lindelöf Principle</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/top_img_amiya.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2022 By Letter Wu</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://letterwu.github.io">blog</a>! 如果有什么问题可以邮件联系: letter_wu@sina.cn</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
