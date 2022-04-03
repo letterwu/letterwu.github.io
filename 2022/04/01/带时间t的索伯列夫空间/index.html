@@ -31,6 +31,20 @@ u\in C(\bar I; X) \iff\begin{aligned}
 <script type="math/tex; mode=display">
 \int_I\|f(s)G(t-s)\|dt = \int_I \|f(s)\||G(t-s)|dt = F*|G|(t)\in L^p(I).</script><p>因此 $t\mapsto f(t) G(t-s)$ 可积, $f<em>G\in L^p(I; X)$. 因此可以定义 $L^p(I;X)$ 与 $L^1(I)$ 的<em>*卷积</em></em>. </p>
 <p><strong>定理:</strong> 若 $f\in L^p(I; X)$, $\varphi\in C_0^m(I)$, 则 $f*\varphi\in C^m(I;X)$. </p>
+<details open>
+<summary>证明请点此: </summary>
+
+只证明 $m=1$ 的情形, 其余类似. 
+$$
+\begin{aligned}
+\frac{d}{dt}f*\varphi(t) &= \lim \int f(s)\frac{1}{h}[\varphi(t+h-s) - \varphi(t-s)]ds
+\end{aligned}
+$$
+
+由于
+</details>
+
+
 <h2 id="L-p-空间的弱导数"><a href="#L-p-空间的弱导数" class="headerlink" title="$L^p$ 空间的弱导数"></a>$L^p$ 空间的弱导数</h2><p>给定 $L^p$ 函数 $f\in L^p(I; X)$, 对于任意 $\varphi\in C_0^\infty(I)$, 我们可以得到</p>
 <script type="math/tex; mode=display">
 \int_I \|f(t)\varphi(t)\|_Xdt\leq\int_I\|f(t)\|_X|\varphi(t)|dt\leq \|f\|_{L^p(I; X)}\|\varphi\|_{L^{p'}(I)}<\infty.</script><p>因此 $t\mapsto|f(t)\varphi(t)|_X$ 关于 $t$ 可积. 根据 Banach 值函数的可积的充要条件可知 $t\mapsto f\varphi$ 可积. 那么就可以合理的定义 $L^p$ 函数的弱导数了. </p>
