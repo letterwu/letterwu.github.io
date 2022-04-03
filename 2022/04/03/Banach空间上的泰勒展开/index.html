@@ -8,11 +8,33 @@
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.1'
-} </script><meta name="generator" content="Hexo 5.4.1"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Frechet-%E5%AF%BC%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">Frechet 导数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E7%A9%BA%E9%97%B4"><span class="toc-number">1.2.</span> <span class="toc-text">切空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E5%90%91%E5%AF%BC%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">方向导数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">多重线性函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%A6%E7%A7%AF%E5%88%86%E4%BD%99%E9%A1%B9%E7%9A%84%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80"><span class="toc-number">3.</span> <span class="toc-text">带积分余项的泰勒展开</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">Letter Wu</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/letterwu">我的主页</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">12</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">18</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">14</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://yui73.github.io/">Yui</a><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://switwu.github.io/">Switwu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top_img_amiya.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Have a nice day~ | Letter Wu's BLOG</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Banach空间上的泰勒展开</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-04-03</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math-note/">math note</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math-note/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/">泰勒展开</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="Frechet-导数"><a href="#Frechet-导数" class="headerlink" title="Frechet 导数"></a>Frechet 导数</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>设 $X,Y$ 是两个 Banach 空间,  $U,V$ 分别是 $X,Y$ 的两个开子集, 并且 </p>
+} </script><meta name="generator" content="Hexo 5.4.1"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Frechet-%E5%AF%BC%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">Frechet 导数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E7%A9%BA%E9%97%B4"><span class="toc-number">1.2.</span> <span class="toc-text">切空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E5%90%91%E5%AF%BC%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">方向导数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">中值定理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">多重线性函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#k-%E9%98%B6%E8%BF%9E%E7%BB%AD%E5%8F%AF%E5%BE%AE%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">$k$ 阶连续可微函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E5%AF%B9%E7%A7%B0%E7%BA%BF%E6%80%A7%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">多重对称线性型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%A6%E7%A7%AF%E5%88%86%E4%BD%99%E9%A1%B9%E7%9A%84%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80"><span class="toc-number">3.</span> <span class="toc-text">带积分余项的泰勒展开</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#U-subset-mathbb-R-n-%E4%B8%8A%E7%9A%84%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80"><span class="toc-number">3.1.</span> <span class="toc-text">$U\subset \mathbb R^n$ 上的泰勒展开</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">Letter Wu</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/letterwu">我的主页</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">12</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">18</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">14</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://yui73.github.io/">Yui</a><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://switwu.github.io/">Switwu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top_img_amiya.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Have a nice day~ | Letter Wu's BLOG</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Banach空间上的泰勒展开</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-04-03</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math-note/">math note</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math-note/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/">泰勒展开</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="Frechet-导数"><a href="#Frechet-导数" class="headerlink" title="Frechet 导数"></a>Frechet 导数</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>设 $X,Y$ 是两个 Banach 空间,  $U,V$ 分别是 $X,Y$ 的两个开子集, 并且 </p>
 <script type="math/tex; mode=display">
 f:U\to V</script><p>是一个给定映射. $f$ 在 $x\in X$ 点处可微当且仅当存在 $X$ 到 $Y$ 的有界线性算子 $F\in L(X,Y)$, 使得</p>
 <script type="math/tex; mode=display">
 \|f(x+h) - f(x) - Fh\| = o(\|h\|), \forall h\in X\to 0.</script><p>这时, 有界线性算子 $F$ 称为 <strong>Frechet 导数</strong>, 记作 $f’(x)$. </p>
+<p><strong>定理</strong> $f$ 在某一点处的导数唯一. </p>
+<details>
+<summary>证明请点此: </summary>
+
+若 $G$ 也满足上式, 则存在 $h_n\to 0$, 使得
+$$
+(F-G)h\to \|F-G\|\|h_n\| = O(\|h_n\|)
+$$
+
+而
+$$
+\begin{aligned}
+&\|Fh_n - Gh_n\| \\
+\leq& \|f(x+h_n) - f(x)-Fh_n\| + \|f(x+h_n) - f(x)-Gh_n\|\\
+\leq& o(\|h_n\|)
+\end{aligned}
+$$
+
+因此 $\|F-G\|=o(1) = 0$, 因此 $F=G$, 导数唯一. 
+</details>
+
+
 <h2 id="切空间"><a href="#切空间" class="headerlink" title="切空间"></a>切空间</h2><p>对于可微映射 $f$ 而言, 它的图像</p>
 <script type="math/tex; mode=display">
 G(f) = \{ (x, y)\subset U\times V; y = f(x) \}</script><p>是一个 $X\times Y$ 上的曲面. 类似的, 我们可以画出有界线性算子 $F$ 的图像(切空间)</p>
@@ -36,10 +58,168 @@ G(F) + \vec x = \{(x+h, f(x)+Fh); h\in X\}.</script><p>我们将两个集合 $G(
 f: U\subset X\to V\subset Y, x\mapsto f(x)</script><p>构造出了一个有界线性算子</p>
 <script type="math/tex; mode=display">
 F: X \to Y, h\mapsto Fh.</script><p>且映射 $f$ 在 $x\in X$ 点的一个邻域内和进行平移之后的有界线性算子 $F$ 只差一个无穷小 $o(|h|)$. 这个有界线性算子所指代的含义也就是在这点处的”切空间”. </p>
-<h2 id="方向导数"><a href="#方向导数" class="headerlink" title="方向导数"></a>方向导数</h2><p>我们任给一个方向 $h\in B(X) = \{h; |h|=1\}$, 令 $g(t; x) = f(x+th)$, 那么可以得到</p>
+<h2 id="方向导数"><a href="#方向导数" class="headerlink" title="方向导数"></a>方向导数</h2><p>我们任给一个方向 $h\in B(X) = \{h; |h|=1\}$, 令 $g_h(t; x) = f(x+th)$, 那么可以得到</p>
 <script type="math/tex; mode=display">
-\|g(t; x)-g(0;x) - tFh\| = o(t).</script><p>很显然,  $\frac{dg}{dt}(0; x) = Fh$ 就是在Banach空间上类似于在 $h$ 方向上的”方向导数”的概念. </p>
-<h1 id="多重线性函数"><a href="#多重线性函数" class="headerlink" title="多重线性函数"></a>多重线性函数</h1><h1 id="带积分余项的泰勒展开"><a href="#带积分余项的泰勒展开" class="headerlink" title="带积分余项的泰勒展开"></a>带积分余项的泰勒展开</h1></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Letter Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://letterwu.github.io/2022/04/03/Banach空间上的泰勒展开/">https://letterwu.github.io/2022/04/03/Banach空间上的泰勒展开/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://letterwu.github.io">Have a nice day~ | Letter Wu's BLOG</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/math/">math</a><a class="post-meta__tags" href="/tags/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/">泰勒展开</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/zfb_code.png"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wx_code.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="social-share pull-right" data-disabled=""></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="next-post pull-right"><a href="/2022/04/03/Banach-%E5%80%BC%E5%87%BD%E6%95%B0/"><span>Banach-值函数</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/top_img_amiya.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2022 By Letter Wu</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://letterwu.github.io">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+\|g(t)-g(0) - tf'(x+h)h\| = o(t).</script><p>很显然,  $\frac{dg}{dt}(0) = f’(x)h$ 就是在Banach空间上类似于在 $h$ 方向上的”方向导数”的概念. </p>
+<p>我们将 $C^1(U,V)$ 记为全体从 $U$ 到 $V$ 的连续可微的函数. 那么</p>
+<script type="math/tex; mode=display">
+f\in C^1(U, V)\Rightarrow g(t) := f(x+th)\in C^1([0, 1]),</script><p>因此有牛莱公式</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&f(x+h) - f(x) = \int_0^1 g'(t) dt \\
+=& \int_0^1 f'(x+th)h dt
+\leq |h|\max_{0\leq t\leq 1}\|f'(x+th)\|. 
+\end{aligned}</script><p>此时积分用的是带时间 $t$ 的<a href="/2022/04/03/Banach-%E5%80%BC%E5%87%BD%E6%95%B0/" title="Banach-值函数">Banach-值函数</a>的积分. </p>
+<h2 id="中值定理"><a href="#中值定理" class="headerlink" title="中值定理"></a>中值定理</h2><p>若 $f: U\to V$ 在定义域 $U$ 内逐点可微, 那么</p>
+<script type="math/tex; mode=display">
+\|f(x_1) - f(x_2)\|\leq \|x_1-x_2\|\max_{0\leq t\leq 1}\|f'(tx_1 + (1-t)x_2)\|.</script><details>
+<summary>证明请点此: </summary>
+
+令 $M > \max\|f(tx_1 + (1-t)x_2)\|$, 设
+$$
+E = \{ t\in [0, 1]; |f(x_2 + t(x_1-x_2)) -f(x_2)|\leq M t\|x_1-x_2\|\}.
+$$
+
+显然 $0\in E$. 根据 $f$ 的连续性, 可以得到若 $t_n\in E\to t_0$, 则 $t_0\in E$. 因此 $E$ 是闭的. 而若 $t\in E$, $s\in [0, 1-t]$, 记 $x_1-x_2=\Delta x$
+$$
+\begin{aligned}
+&\|f(x_2 + (t+s)\Delta x) - f(x_2)\|\\
+\leq &\|f(x_2 + (t+s)\Delta x) - f(x_2 + t\Delta x)\| + \
+\|f(x_2 + t\Delta x) - f(x_2)\|\\
+\leq &\|\int_t^{t+s}f'(x_2 + t\Delta x)\Delta xd\tau\| + \
+Mt\|\Delta x\|\\
+\leq &M(t+s)\|\Delta x\|
+\end{aligned}
+$$
+
+因此 $t+s\in E$, 因此 $E=[0, 1]$. 因此得证. 
+
+</details>
+
+<p>令 $T\in L(X, Y)$, 则对 $x\to f(x) - Tx$ 同样可以得到</p>
+<script type="math/tex; mode=display">
+\|f(x_1) - f(x_2) -T(x_1-x_2)\|\leq |x_1-x_2|\max_{x\in [x_1,x_2]}\|f'(x)-T\|</script><h1 id="多重线性函数"><a href="#多重线性函数" class="headerlink" title="多重线性函数"></a>多重线性函数</h1><h2 id="k-阶连续可微函数"><a href="#k-阶连续可微函数" class="headerlink" title="$k$ 阶连续可微函数"></a>$k$ 阶连续可微函数</h2><p>我们在上一章里面已经定义了连续可微函数 $C^1(U,Y)$: </p>
+<script type="math/tex; mode=display">
+f\in C^1(U, Y)\iff f\in C(U, Y), and\ f'\in C(U, L(X, Y)).</script><p>类似的, 我们可以递归定义 $k$ 次连续可微函数 $C^k(U,Y)$: </p>
+<script type="math/tex; mode=display">
+f\in C^k(U, Y)\iff f\in C^{k-1}(U, Y), and\ f'\in C^{k-1}(U, L(X, Y)).</script><p>我们可以看出 $f’’\in C(U, L(X, L(X, Y)))$, 而 $L(X,L(X, Y))$ 和 $L(X^2, Y)$是一个空间(等距同构). </p>
+<details>
+<summary>证明请点此: </summary>
+
+乘积空间 $X^2$ 上的范数取 $\max$ 范数. 任取 $u\in L(X^2, Y)$, 有
+$$
+\hat u: x\in X\mapsto u(x, \cdot)\in L(X, Y)
+$$
+
+显然可得 $\|u\| = \|\hat u\|$. 而对于任意 $v\in L(X, L(X,Y))$, 有
+$$
+\overline v: (x,x')\in X^2\mapsto v(x)(x')\in Y
+$$
+
+显然有 $\|v\| = \|\overline v\|$. 且有 $\overline{\hat u} = u$, 因此等距同构. 
+</details>
+
+<p>使用归纳法就可以得到 $f^{k} \in C(U, L(X^k, Y))$. </p>
+<h2 id="多重对称线性型"><a href="#多重对称线性型" class="headerlink" title="多重对称线性型"></a>多重对称线性型</h2><p><strong>引理:</strong> 令 $\Delta_yF(x) = F(x+y) - F(x)$. 若 $f\in C^k(U, Y)$, 则有</p>
+<script type="math/tex; mode=display">
+f^{(k)}(x; y_1, \cdots, y_k) = \Delta_{y_k}\cdots \Delta_{y_1}f(x) + o(\|y_1\|\cdots\|y_k\|).</script><details>
+<summary>证明请点此: </summary>
+
+只证明 $n\leq2$ 的情形, $n=k$ 类似. 当 $n=1$ 时有
+$$
+\|\Delta_yf(x) - f'(x; y)\|=o(\|y\|). 
+$$
+
+当 $n=2$ 时我们有
+$$
+\begin{aligned}
+&\|\Delta_{y_2}\Delta_{y_1}f(x) - f'(x; y_1, y_2)\|\\
+\leq &\|\Delta_{y_2}(\Delta_{y_1}f(x)-f'(x; y_1)) \| + 
+\|\Delta_{y_2}f'(x; y_1) - f''(x; y_1, y_2)\|\\
+\leq& \|y_2\|o(\|y_1\|) + \|y_1\|o(\|y_2\|) = o(\|y_1\|\|y_2\|)
+\end{aligned}
+$$
+</details>
+
+
+<p><strong>定理:</strong> 若 $f\in C^k(U, Y)$, 则 $f^{k}$ 是一个 $k$ 重对称线性型. 也就是说, 求导的先后次序无关紧要. </p>
+<details>
+<summary>证明请点此: </summary>
+
+只证明 $n=2$ 的情形, $n=k$ 类似. 容易看出
+$$
+\begin{aligned}
+&\Delta_{y_2}\Delta_{y_1}f(x) \\
+=& \Delta_{y_2}(f(x + y_1) - f(x)) \\
+=& f(x+y_1+y_2) - f(x+y_1) - f(x+y_2) + f(x) \\
+=& \Delta_{y_1}\Delta_{y_2}f(x). 
+\end{aligned}
+$$
+
+因此 $\Delta_{y_2}\Delta_{y_1}f(x)$ 关于 $y_1, y_2$ 是对称的. 因此
+$$
+f''(x; y_1, y_2) - f''(x; y_2, y_1) = o(\|y_1\|\|y_2\|). 
+$$
+
+由于 $f^{(k)}(x)$ 是齐次的, 因此
+$$
+\begin{aligned}
+&f''(x; y_1, y_2) - f''(x; y_2, y_1) \\
+=& \varepsilon^{-2}\left(f''(x; \varepsilon y_1, \varepsilon y_2) - f''(x; \varepsilon y_2, \varepsilon y_1)\right)\\
+=&\varepsilon^{-2}o(\|\varepsilon y_1\|\|\varepsilon y_2\|)\\
+=&\frac{o(\varepsilon^2)}{\varepsilon^2}o(\|y_1\|\|y_2\|) \to 0
+\end{aligned}
+$$
+
+因此 $f''(x; y_1, y_2) = f''(x; y_2, y_1)$. 
+</details>
+
+
+<h1 id="带积分余项的泰勒展开"><a href="#带积分余项的泰勒展开" class="headerlink" title="带积分余项的泰勒展开"></a>带积分余项的泰勒展开</h1><p>对于多重导数, 若作用于同一个向量 $y$, 我们不妨记作 $f^{(k)}(x; y^k)=f^{(k)}(x; y, \cdots,  y)$. 直接根据定义, 我们可以得到, </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\frac{d}{dt}f^{(k)}(x+ty; y^k) = f^{(k+1)}(x+ty; y^{k+1})\\
+&f^{(k)}(x+y; y^{k}) - f^{(k)}(x; y^k) = \int_0^1f^{(k+1)}(x+ty; y^{k+1})dt
+\end{aligned}</script><p>对于 $k=0$, 我们可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(x+y) &= f(x) + \int_0^1 \frac{d}{dt}f(x+ty)dt\\
+=& f(x) + \int_0^1f'(x+ty; y)dt
+\end{aligned}</script><p>根据分部积分, 我们可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_0^1f'(x+ty; y)dt
+&=tf'(x+ty; y)\Big|_{t=0}^1 - \int_0^1 t \frac{d}{dt}f'(x+ty; y)dt\\
+&=f'(x+y; y) - \int_0^1tf''(x+ty; y^2)dt\\
+&=f'(x; y) + \int_0^1(1-t)f''(x+ty; y^2)dt
+\end{aligned}</script><p>这时, 我们得到了 $k=1$ 时的泰勒展开:</p>
+<script type="math/tex; mode=display">
+f(x+y) = f(x) + f'(x; y) + \int_0^1(1-t)f''(x+ty; y^2)dt.</script><p>不妨假设对于 $k=s-1$ 时, 成立</p>
+<script type="math/tex; mode=display">
+f(x+y) = \sum_{i=0}^{k} \frac{1}{i!}f^{(i)}(x; y^i) + \int_0^1\frac{(1-t)^k}{k!}f^{(k+1)}(x+ty; y^{k+1})dt.</script><p>那么对上式中的积分进行分部积分, 可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\int_0^1\frac{(1-t)^{s-1}}{(s-1)!}f^{(s)}(x+ty; y^{s})dt\\
+=&-\int_0^1 f^{(s)}(x+ty; y^{s})d \frac{(1-t)^{s}}{s!}\\
+=&-\left.f^{(s)}(x+ty; y^{s}) \frac{(1-t)^{s}}{s!}\right|_{t=0}^1 + \int_0^1\frac{(1-t)^{s}}{s!} d f^{(s)}(x+ty; y^{s})\\
+=&\frac{1}{s!}f^{(s)}(x; y^s) + \int_0^1\frac{(1-t)^{s}}{s!} f^{(s+1)}(x+ty; y^{s+1})dt
+\end{aligned}</script><p>即证.</p>
+<p><strong>定理:</strong> 若 $f\in C^k(U,Y)$, 则</p>
+<script type="math/tex; mode=display">
+f(x+y) = \sum_{j=0}^{k-1}\frac{1}{j!}f^{(j)}(x; y^j) + \int_0^1\frac{(1-t)^{k-1}}{(k-1)!}f^{(k)}(x+ty; y^k)dt.</script><p>特殊地, 我们有</p>
+<script type="math/tex; mode=display">
+f(x+y) - \sum_{j=0}^k f^{(j)}(x; y^j) = o(\|y\|), y\to 0.</script><h2 id="U-subset-mathbb-R-n-上的泰勒展开"><a href="#U-subset-mathbb-R-n-上的泰勒展开" class="headerlink" title="$U\subset \mathbb R^n$ 上的泰勒展开"></a>$U\subset \mathbb R^n$ 上的泰勒展开</h2><p>我们假设 $U\subset \mathbb R^n$, 那么我们可以通过方向导数的定义得出: </p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial x_i}f(x) = f'(x; e_i)</script><p>那么</p>
+<script type="math/tex; mode=display">
+\partial^\alpha f(x) = \partial_1^{\alpha_1}\cdots\partial_n^{\alpha_n}f(x)</script><p>设 $y = \sum y_i e_i$, 那么</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f^{(k)}(x; y^k) &= \sum_{i_1=1}^n\cdots\sum_{i_n=1}^ny_{i_1}\cdots y_{i_n} \partial_{i_1}\cdots\partial_{i_n}f(x) \\
+&=\sum_{|\alpha|=k} y^\alpha \partial^\alpha f(x) \frac{k!}{\alpha!}
+\end{aligned}</script><p>代入泰勒展开中可以得到:</p>
+<script type="math/tex; mode=display">
+f(x+y) = \sum_{|\alpha|<k}\frac{y^\alpha}{\alpha!}\partial^\alpha f(x) + \sum_{|\alpha|=k}\frac{ky^\alpha}{\alpha!}\int_0^1(1-t)^{k-1}\partial^\alpha f(x+ty)dt.</script></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Letter Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://letterwu.github.io/2022/04/03/Banach空间上的泰勒展开/">https://letterwu.github.io/2022/04/03/Banach空间上的泰勒展开/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://letterwu.github.io">Have a nice day~ | Letter Wu's BLOG</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/math/">math</a><a class="post-meta__tags" href="/tags/%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/">泰勒展开</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/zfb_code.png"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wx_code.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="social-share pull-right" data-disabled=""></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="next-post pull-right"><a href="/2022/04/03/Banach-%E5%80%BC%E5%87%BD%E6%95%B0/"><span>Banach-值函数</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/top_img_amiya.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2022 By Letter Wu</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://letterwu.github.io">blog</a>!</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
     processEscapes: true,
