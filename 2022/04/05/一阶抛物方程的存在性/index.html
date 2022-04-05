@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="一阶抛物方程"><meta name="keywords" content="math,能量法,一阶抛物方程"><meta name="author" content="Letter Wu"><meta name="copyright" content="Letter Wu"><title>一阶抛物方程 | Have a nice day~ | Letter Wu's BLOG</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.1'
+} </script><meta name="generator" content="Hexo 5.4.1"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B%E7%9A%84%E5%BC%B1%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">一阶抛物方程的弱解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A4%AD%E5%9C%86%E7%AE%97%E5%AD%90-L-%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">椭圆算子 $L$ 的能量不等式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B%E7%9A%84%E5%85%88%E9%AA%8C%E4%BC%B0%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">抛物方程的先验估计</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">Letter Wu</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/letterwu">我的主页</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">13</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">20</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">16</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://yui73.github.io/">Yui</a><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://switwu.github.io/">Switwu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top_img_amiya.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Have a nice day~ | Letter Wu's BLOG</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">一阶抛物方程</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-04-05</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math-note/">math note</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math-note/%E8%83%BD%E9%87%8F%E6%B3%95/">能量法</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math-note/%E8%83%BD%E9%87%8F%E6%B3%95/%E4%B8%80%E9%98%B6%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B/">一阶抛物方程</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="一阶抛物方程的弱解"><a href="#一阶抛物方程的弱解" class="headerlink" title="一阶抛物方程的弱解"></a>一阶抛物方程的弱解</h1><p>计算方程</p>
+<script type="math/tex; mode=display">
+\left\{\begin{aligned}
+&\partial_t u + Lu = f& in \ U_T = U\times (0, T]\\
+&u = 0& on\ \partial U\times [0, T]\\
+&u = g& on\ U\times\{t = 0\}
+\end{aligned}\right.</script><p>其中 $Lu$ 是一个二阶椭圆算子, 可以写作</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L[u] = -\sum_{i, j} \frac{\partial}{\partial x_j}\left(a_{ij}(t)\frac{\partial u}{\partial x_i}\right) + \sum b_i(t)\frac{\partial u}{\partial x_i} + c(t)u. 
+\end{aligned}</script><p>椭圆算子满足下式: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sum a_{ij}(t)\xi_i\xi_j\geq \theta |\xi|^2, 
+\end{aligned}</script><p>其中 $\theta$ 是大于零的常数. 我们可以把抛物方程</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+u_t + Lu = f
+\end{aligned}</script><p>化成积分形式: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+(u_t, v)_{L^2} + B[u, v; t] = (f, v)_{L^2}, \forall v\in L^2(0, T; H_0^1), 
+\end{aligned}</script><p>其中</p>
+<script type="math/tex; mode=display">
+B[u,v;t] = \int_U \sum_{ij} a_{ij}(t) (\partial_i u)\partial_j v + \sum_i b_i(t) (\partial_i u) v + c(t) u v dx.</script><h1 id="椭圆算子-L-的能量不等式"><a href="#椭圆算子-L-的能量不等式" class="headerlink" title="椭圆算子 $L$ 的能量不等式"></a>椭圆算子 $L$ 的能量不等式</h1><p><strong>定理:</strong> 对于 $B$, 我们可以计算出能量不等式: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+B[u,u;t] + c_1\|u(t)\|_{L^2}^2 \geq c_2\|u(t)\|_{H^1_0}^2, \forall u\in L^2(0, T; H_0^1). 
+\end{aligned}</script><details>
+<summary>证明请点此: </summary>
+
+$$
+\begin{aligned}
+B[u, u; t] &= \int_U \sum_{ij}a_{ij}(t)u_iu_j + \sum_ib_i(t)u_iu + c(t)u^2\\
+&\geq \theta \int_U \sum_i|u_i|^2 - C u\sum_i u_i - Cu^2dt\\
+&\geq \theta\|\nabla u\|_{L^2}^2 - \frac{\theta}{2}\|\nabla u\|_{L^2}^2 - C\|u\|_{L^2}^2 = \frac{\theta}{2}\|\nabla u\|^2_{L^2} - c\|u\|^2_{L^2}
+\end{aligned}
+$$
+
+又因为 $H_0^1$ 上的范数 $\|u\|_{H_0^1}$ 和 $\|Du\|_{L^2}$ 等价, 因此不等式可以直接化为:
+$$
+\begin{aligned}
+B[u,u;t] + c_1 \|u\|_{L^2}^2\geq c_2 \|u\|_{H_0^1}^2. 
+\end{aligned}
+$$
+
+即证. 
+</details>
+
+
+<h1 id="抛物方程的先验估计"><a href="#抛物方程的先验估计" class="headerlink" title="抛物方程的先验估计"></a>抛物方程的先验估计</h1><p>对于抛物方程</p>
+<script type="math/tex; mode=display">
+u_t + Lu = f,</script><p>乘以 $u$ 再对空间变量 $x$ 积分可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_U u_t u &= -B[u, u; t] + \int_U fu\\
+&\leq C(\|f\|_{L^2}\|u\|_{L^2} + \|u\|_{H^1_0}^2)\\
+&\leq C\|u\|_{H^1_0}(\|f\| + \|u\|_{H_0^1})
+\end{aligned}</script><p>因此可以看出 $u’(t)\in H^{-1}$, 是 $H_0^1$ 上面的连续线性泛函. 因此我们不妨认为 $u’\in L^2(0, T; H^{-1})$. </p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Letter Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://letterwu.github.io/2022/04/05/一阶抛物方程的存在性/">https://letterwu.github.io/2022/04/05/一阶抛物方程的存在性/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://letterwu.github.io">Have a nice day~ | Letter Wu's BLOG</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/math/">math</a><a class="post-meta__tags" href="/tags/%E8%83%BD%E9%87%8F%E6%B3%95/">能量法</a><a class="post-meta__tags" href="/tags/%E4%B8%80%E9%98%B6%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B/">一阶抛物方程</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/zfb_code.png"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wx_code.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="social-share pull-right" data-disabled=""></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="next-post pull-right"><a href="/2022/04/03/Banach%E7%A9%BA%E9%97%B4%E4%B8%8A%E7%9A%84%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80/"><span>Banach空间上的泰勒展开</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/top_img_amiya.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2022 By Letter Wu</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://letterwu.github.io">blog</a>! 如果有什么问题可以邮件联系: letter_wu@sina.cn</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
