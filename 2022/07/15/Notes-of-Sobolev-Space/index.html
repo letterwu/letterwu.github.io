@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Notes_of_Sobolev_Space"><meta name="keywords" content=""><meta name="author" content="Letter Wu"><meta name="copyright" content="Letter Wu"><title>Notes_of_Sobolev_Space | Have a nice day~ | Letter Wu's BLOG</title><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.1'
+} </script><meta name="generator" content="Hexo 5.4.1"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Note-of-Sobolev-Space"><span class="toc-number">1.</span> <span class="toc-text">Note of Sobolev Space</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#W-m-p-Omega-%E5%92%8C-W-m-p-overline-Omega-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.</span> <span class="toc-text">$W^{m,p}(\Omega)$ 和 $W^{m, p}(\overline \Omega)$ 的区别</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">Letter Wu</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/letterwu">我的主页</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">18</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">23</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">21</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://yui73.github.io/">Yui</a><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://switwu.github.io/">Switwu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top_img_amiya.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Have a nice day~ | Letter Wu's BLOG</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Notes_of_Sobolev_Space</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-07-15</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="Note-of-Sobolev-Space"><a href="#Note-of-Sobolev-Space" class="headerlink" title="Note of Sobolev Space"></a>Note of Sobolev Space</h1><blockquote>
+<p>最近在学习 Adam 的 <Sobolev Space>. 有些想到的小问题就在这里记录一下. </p>
+</blockquote>
+<h2 id="W-m-p-Omega-和-W-m-p-overline-Omega-的区别"><a href="#W-m-p-Omega-和-W-m-p-overline-Omega-的区别" class="headerlink" title="$W^{m,p}(\Omega)$ 和 $W^{m, p}(\overline \Omega)$ 的区别"></a>$W^{m,p}(\Omega)$ 和 $W^{m, p}(\overline \Omega)$ 的区别</h2><p>在证明具有正则性条件的区域 $\Omega$ 上, $C^\infty_0(\mathbb R^n)$ 在 $W^{m,p}(\Omega)$ 上稠密. 这样一个定理的时候, 过程中有这样一句话: </p>
+<blockquote>
+<p>For fixed such $j$ we extend $u_j$ to be identically zero outside  $\Omega$. Thus $u_j\in W^{m, p}(\mathbb R^n - \Gamma)$, where $\Gamma = \overline {V_j}\cap \partial \Omega$. </p>
+</blockquote>
+<p>也就是说原本 $u_j\in W^{m,p}(V_j)$, 令 $u_j$ 在区域外为零, 那么 $u_j\in W^{m,p}(\mathbb R^n - \partial V_j)$. 我就在想, 区域 $\Omega_0 = \mathbb R^n - \Gamma$ 和 $\mathbb R^n = \overline{\Omega_0}$ 上的索伯列夫空间有什么不同之处呢? </p>
+<p>既然书上是这么写的, 那么这两个空间 $W_1 = W^{m,p}(\Omega_0)$, $W_2 = W^{m, p}(\overline {\Omega_0})$ 之间一定是不一样的. 并且直觉告诉我们显然这两个空间是不一样的, 但是范数的定义告诉我们, 似乎两个没什么区别, 因为两个区域只差了一个边界. 而边界测度为零的, 也就是说</p>
+<script type="math/tex; mode=display">
+\int_{\Omega_0}\varphi = \int_{\overline {\Omega_0}}\varphi, \forall \varphi \in L^1({\Omega}).</script><p>在学习 $L^p$ 空间的时候我们就已经知道了, 对于 $L^p(\Omega)$ 和 $L^p(\overline\Omega)$ 来说, 这两个都是同一个空间. 这和我们判断的结果是类似的. 那么区别出现在哪里呢?</p>
+<p>这时候我突然想到 $W^{m,p}$ 和 $L^p$ 的一个区别在哪里了, 就是弱导数. 既然两个函数的范数是一致的, 那么唯一的区别就是弱导数本身了. 对于其中一个索伯列夫空间的函数 $u$ 而言, 它可能不属于另一个索伯列夫空间的函数. </p>
+<p>我们可以考虑 $u\in W^{m,p}(\overline \Omega)$, 我们有</p>
+<script type="math/tex; mode=display">
+\int u\nabla\varphi = -\int \varphi \nabla u, \forall \varphi\in C_0^\infty(\overline \Omega);</script><p>但是对于 $u\in W^{m,p}(\Omega)$, 我们有</p>
+<script type="math/tex; mode=display">
+\int u\nabla\varphi = -\int \varphi \nabla u, \forall \varphi\in C_0^\infty(\Omega);</script><p>两者的区别就在于 $\varphi$ 取得函数不一样了. 任取 $\varphi_1\in W^{m,p}(\Omega), \varphi_2\in W^{m, p}(\overline\Omega)$. 我们可以看出由于 $supp(\varphi_1)\subset\subset \Omega$, $\varphi|_{\partial \Omega} = 0$; 但是对于 $\varphi$ 来说, 在边界处不一定趋向于0. 因为任取紧集$K$, $K\cap \overline \Omega\subset\subset\overline\Omega$. 因此任意具有紧支集且在 $\overline\Omega$ 上光滑的函数都属于 $C_0^\infty(\overline\Omega)$. </p>
+<p>若取 $\Omega = (0, 1)$, 则 $1_{[0, 1]}\in C_0^\infty([0, 1])$. 类似的, $C_0^\infty(\mathbb{R^n})\subset C_0^\infty(\overline \Omega)$, 但是若边界上不是0, 那么 $\varphi\in C_0^\infty(\mathbb R^n)\setminus C_0^\infty(\Omega)$. </p>
+<p>我们有</p>
+<script type="math/tex; mode=display">
+0 = \int_{\Omega} \nabla (u\varphi)dx =\int_{\partial\Omega} u\varphi</script><p>若 $\forall \varphi\in C_0^\infty(\overline \Omega)$, 则可以得到 $u|_{\partial\Omega} = 0$. 因此可以得到, $W_0^{m,p}(\Omega) = W^{m,p}(\overline\Omega)$. </p>
+<p>132</p>
+<p>123</p>
+<p>123</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Letter Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://letterwu.github.io/2022/07/15/Notes-of-Sobolev-Space/">https://letterwu.github.io/2022/07/15/Notes-of-Sobolev-Space/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://letterwu.github.io">Have a nice day~ | Letter Wu's BLOG</a>！</span></div></div><div class="post-meta__tag-list"></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/zfb_code.png"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wx_code.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="social-share pull-right" data-disabled=""></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="prev-post pull-left"><a href="/2022/08/10/%E4%B8%8B%E8%BD%BD%E5%B0%8F%E8%AF%B4/"><i class="fa fa-chevron-left">  </i><span>下载小说</span></a></div><div class="next-post pull-right"><a href="/2022/06/01/GNN-thm/"><span>GNN-thm</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/top_img_amiya.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2022 By Letter Wu</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://letterwu.github.io">blog</a>! 如果有什么问题可以邮件联系: letter_wu@sina.cn</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
